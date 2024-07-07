@@ -1,0 +1,10 @@
+package eu.anastasis.mondoelli.enums;
+
+public enum Quartiere {
+	INTRODUZIONE,
+	CONTROLLO_INTERFERENZA,
+	INIBIZIONE_RISPOSTA,
+	MEMORIA_LAVORO,
+	FLESSIBILITA_COGNITIVA,
+	MEDIA_LITERACY;
+}

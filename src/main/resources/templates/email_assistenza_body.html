@@ -1,0 +1,24 @@
+
+<p>
+	L'utente <span th:text="${nomeUtente}"></span>
+	(<span th:text="${emailUtente}"></span>)
+	del centro <span th:text="${nomeCentro}"></span>
+	ha inviato una <strong>richiesta di assistenza</strong>.
+</p>
+
+<h2>Riepilogo della richiesta</h2>
+
+<p>
+	Oggetto: <span th:text="${oggetto}"></span>
+</p>
+<p>
+	Messaggio: <span th:text="${contenuto}"></span>
+</p>
+
+<p>
+	Un <strong>esperto</strong> ti risponderà presto per fornire il supporto richiesto.	<br />
+</p>
+
+<p>
+	user agent: <span th:text="${userAgent}"></span>
+</p>

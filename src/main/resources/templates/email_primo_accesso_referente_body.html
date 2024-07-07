@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head th:insert="_style_mondoelli"></head>
+<body>
+	<div class="container">
+		<div class="contenuto">
+			<div th:insert="_header_mondoelli"></div>
+			<p class="testo-principale">
+				Gentile <span th:text="${referente}"></span>,<br/>
+				sei stato aggiunto come referente de "Il Mondo degli Elli".<br/>
+				<br/>
+				Per effettuare il tuo primo accesso, fai clic sul seguente link, valido <strong>una sola volta</strong>.<br/>
+				<strong>RICORDA</strong> di attivare l'abbonamento solo quando avrai individuato gli studenti
+				e il tuo gruppo di lavoro, e comunque non oltre <strong>9 mesi</strong> da oggi.<br/>
+				<br/>
+				<a class="link-mondoelli" th:href="${tokenAccessLink}" th:text="${tokenAccessLink}"></a><br/>
+    			<br/>
+				Per gli accessi successivi potrai accedere direttamente da questa pagina:<br/>
+				<a class="link-mondoelli" th:href="${linkClientApp}" th:text="${linkClientApp}"></a><br/>
+				inserendo il tuo indirizzo email (lo stesso che stai leggendo in questo momento) e la password che avrai scelto.<br/>
+			</p>
+			<div th:insert="_footer_mondoelli"></div>
+		</div>
+	</div>
+</body>
+</html>
