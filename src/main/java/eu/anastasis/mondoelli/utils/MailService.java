@@ -6,6 +6,8 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 
 import eu.anastasis.mondoelli.configuration.AppConfiguration;
@@ -17,6 +19,9 @@ public class MailService {
 
 	@Autowired
 	private AppConfiguration appConfig;
+
+	@Autowired
+	private MailSender mailSender;
 
 	public boolean send(EmailDto emailDto) {
 
@@ -50,9 +55,14 @@ public class MailService {
 	}
 
 	boolean sendMail(EmailDto emailDto) {
-		// TODO: Invio mail da implementare
-		logger.warn("Invio email non implementato");
-		return false;
+		JavaMailSender emailSender = mailSender.getJavaMailSender();
+		SimpleMailMessage message = new SimpleMailMessage();
+		message.setFrom(emailDto.getEmailFrom());
+		message.setTo(emailDto.getEmailTo().get(0));
+		message.setSubject(emailDto.getEmailSubject());
+		message.setText(emailDto.getEmailBody());
+		emailSender.send(message);
+		return true;
 	}
 
 }
